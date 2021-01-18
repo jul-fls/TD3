@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 void main() {
-	int n;
+	long n=0,sum=0,min=0,max=0;
 	int nvalues[1000];
 	printf("Choisir une valeur pour n :");
 	scanf("%d", &n);
@@ -9,8 +9,15 @@ void main() {
 	for (int i = 0;i < n;i++) {
 		printf("Entrer la valeur numero %d :\n", i + 1);
 		scanf("%d", &nvalues[i]);
+		sum += nvalues[i];
+		if (nvalues[i] < min) {
+			min = nvalues[i];
+		}
+		else if (nvalues[i] > max) {
+			max = nvalues[i];
+		}
 	}
 	for (int i = 0;i < n;i++) {
-		printf("Valeur %d = %d\n", i+1, nvalues[i]);
+		printf("%d ", nvalues[i]);
 	}
-}
+	printf("\nSomme = %d\nMinimum = %d\nMaximum = %d\n",sum,min,max);
