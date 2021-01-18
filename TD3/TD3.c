@@ -10,8 +10,7 @@ void main() {
 		printf("Entrer la valeur numero %d :\n", i + 1);
 		scanf("%d", &nvalues[i]);
 		if (i == 0) {
-			min = nvalues[i];
-			max = nvalues[i];
+			min = max = nvalues[i];
 		}
 		sum += nvalues[i];
 		if (nvalues[i] < min) {
