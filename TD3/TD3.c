@@ -2,7 +2,7 @@
 #include <stdio.h>
 void main() {
 	long n = 0, nbdel;
-	int nvalues[1000];
+	char nvalues[1000];
 	printf("Choisir une valeur pour n :");
 	scanf("%d", &n);
 	printf("Vous avez choisi la valeur %d !\nAllons-y !\n", n);
@@ -13,9 +13,8 @@ void main() {
 	printf("Choisir une valeur a retirer :");
 	scanf("%d", &nbdel);
 	for (int i = 0;i < n;i++) {
-		if (nvalues[i] == nbdel) {
-			nvalues[i] = 0;
+		if (nvalues[i] != nbdel) {
+			printf("%d ", nvalues[i]);
 		}
-		printf("%d ", nvalues[i]);
 	}
 }
