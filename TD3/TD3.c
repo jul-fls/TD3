@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 void main() {
-	long n = 0, sum = 0, min = 0, max = 0;
+	long n = 0, nbdel;
 	int nvalues[1000];
 	printf("Choisir une valeur pour n :");
 	scanf("%d", &n);
@@ -9,19 +9,13 @@ void main() {
 	for (int i = 0;i < n;i++) {
 		printf("Entrer la valeur numero %d :\n", i + 1);
 		scanf("%d", &nvalues[i]);
-		if (i == 0) {
-			min = max = nvalues[i];
-		}
-		sum += nvalues[i];
-		if (nvalues[i] < min) {
-			min = nvalues[i];
-		}
-		else if (nvalues[i] > max) {
-			max = nvalues[i];
-		}
 	}
+	printf("Choisir une valeur a retirer :");
+	scanf("%d", &nbdel);
 	for (int i = 0;i < n;i++) {
+		if (nvalues[i] == nbdel) {
+			nvalues[i] = 0;
+		}
 		printf("%d ", nvalues[i]);
 	}
-	printf("\nSomme = %d\nMinimum = %d\nMaximum = %d\n", sum, min, max);
 }
